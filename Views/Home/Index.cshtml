@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TestMVC.Models.VentasDetalle>
+@{
+    ViewBag.Title = "Ventas";
+}
+
+<main>
+    <h2> Lista de Ventas </h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                Nombre del Producto
+            </th>
+            <th>
+                Vendedor
+            </th>
+            <th>
+                Precio
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var venta in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => venta.IdProd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => venta.IdUser)
+                </td>
+                <td>
+                    @venta.PrecioVent
+                </td>
+
+            </tr>
+        }
+
+
+</main>

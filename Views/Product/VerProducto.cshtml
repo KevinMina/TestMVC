@@ -1,0 +1,50 @@
+﻿@model IEnumerable<TestMVC.Models.Producto>
+
+@{
+    ViewBag.Title = "VerProducto";
+}
+
+<h2>VerProducto</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateProduct")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdProd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreProd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioProd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoProd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdProd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreProd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecioProd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoProd)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditProduct", new { id=item.IdProd  }) |
+            @Html.ActionLink("Delete", "BorrarProducto", new { id=item.IdProd })
+        </td>
+    </tr>
+}
+
+</table>
